@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Victory Hour Multimedia Inc. Projects</title>
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" href="assets/victoryhour-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Meta for PWA theme -->
+  <meta name="theme-color" content="#1C2833">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -93,6 +103,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Victory Hour Multimedia Inc. Projects</h1>
@@ -147,5 +158,16 @@
     *We build brands that lead. From strategy to design to digital presence—your growth is our mission.*</p>
     <p>💛 10% of all profits go to feed the hungry.</p>
   </footer>
+
+  <script>
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log("✅ Service Worker Registered"))
+          .catch(err => console.log("Service Worker Error:", err));
+      });
+    }
+  </script>
 </body>
 </html>
